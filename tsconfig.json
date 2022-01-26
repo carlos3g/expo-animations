@@ -13,7 +13,8 @@
       "@screens": ["./src/screens"],
       "@services": ["./src/services"],
       "@styles": ["./src/styles"],
-      "@types": ["./src/types.ts"]
+      "@types": ["./src/types.ts"],
+      "@utils": ["./src/utils"]
     }
   }
 }

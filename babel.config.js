@@ -40,6 +40,10 @@ const importOptions = {
       rootPathSuffix: './src/types.ts',
       rootPathPrefix: '@types',
     },
+    {
+      rootPathSuffix: './src/utils',
+      rootPathPrefix: '@utils',
+    },
   ],
 };
 
