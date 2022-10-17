@@ -17,12 +17,24 @@ const importOptions = {
       rootPathPrefix: '@components',
     },
     {
+      rootPathSuffix: './src/enums',
+      rootPathPrefix: '@enums',
+    },
+    {
       rootPathSuffix: './src/hooks',
       rootPathPrefix: '@hooks',
     },
     {
+      rootPathSuffix: './src/interfaces',
+      rootPathPrefix: '@interfaces',
+    },
+    {
       rootPathSuffix: './src/providers',
       rootPathPrefix: '@providers',
+    },
+    {
+      rootPathSuffix: './src/models',
+      rootPathPrefix: '@models',
     },
     {
       rootPathSuffix: './src/screens',
@@ -33,16 +45,12 @@ const importOptions = {
       rootPathPrefix: '@services',
     },
     {
-      rootPathSuffix: './src/styles',
-      rootPathPrefix: '@styles',
-    },
-    {
-      rootPathSuffix: './src/types.ts',
-      rootPathPrefix: '@types',
-    },
-    {
       rootPathSuffix: './src/utils',
       rootPathPrefix: '@utils',
+    },
+    {
+      rootPathSuffix: './src/styles',
+      rootPathPrefix: '@styles',
     },
   ],
 };
