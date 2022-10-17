@@ -1,3 +1,4 @@
+export { CirclesAnimatedSensor } from './CirclesAnimatedSensor';
 export { Counter } from './Counter';
 export { FadeCarouselTransition } from './FadeCarouselTransition';
 export { FloatingHearts } from './FloatingHearts';
