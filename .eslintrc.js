@@ -7,11 +7,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     '@react-native-community',
-    'prettier',
+    'plugin:react/jsx-runtime',
   ],
-  settings: {
-    'import/core-modules': ['@expo/vector-icons'],
-  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +16,7 @@ module.exports = {
     },
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
-    ecmaVersion: 13,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
@@ -29,14 +26,26 @@ module.exports = {
       2,
       {
         namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-uses-react': 0,
-    'react/react-in-jsx-scope': 0,
+    '@typescript-eslint/no-misused-promises': [
+      2,
+      {
+        checksVoidReturn: false,
+      },
+    ],
     'import/extensions': 0,
     'import/no-unresolved': 0,
     'react/style-prop-object': 0,
     'import/prefer-default-export': 0,
     '@typescript-eslint/unbound-method': 0,
+    'global-require': 0,
+    'no-void': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-uses-react': 0,
+    'react/react-in-jsx-scope': 0,
   },
 };
