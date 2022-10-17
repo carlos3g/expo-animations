@@ -33,7 +33,6 @@ export default {
       barStyle: 'dark-content',
     },
     androidNavigationBar: {
-      visible: 'sticky-immersive',
       barStyle: 'dark-content',
       backgroundColor: '#ededf1',
     },
