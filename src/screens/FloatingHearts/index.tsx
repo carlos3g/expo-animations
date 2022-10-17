@@ -1,7 +1,8 @@
 import { FC, useCallback, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import AnimatedHeart from './AnimatedHeart';
+
 import styles from './styles';
+import { AnimatedHeart } from './AnimatedHeart';
 
 interface IHeart {
   id: number;
@@ -26,17 +27,11 @@ const FloatingHearts: FC = () => {
 
   return (
     <View style={styles.container}>
-      {hearts.length > 0 &&
-        hearts.map((h) => (
-          <AnimatedHeart
-            key={h.id}
-            onComplete={() => handleRemoveHeart(h.id)}
-          />
-        ))}
+      {hearts.length > 0 && hearts.map((h) => <AnimatedHeart key={h.id} onComplete={() => handleRemoveHeart(h.id)} />)}
 
       <TouchableOpacity style={styles.fab} onPress={handleAddHeart} />
     </View>
   );
 };
 
-export default FloatingHearts;
+export { FloatingHearts };

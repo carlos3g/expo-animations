@@ -1,6 +1,8 @@
-import { FC, useState, useCallback } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+
 import Animated, { SlideInDown, SlideOutUp } from 'react-native-reanimated';
+
 import styles from './styles';
 
 const Counter: FC = () => {
@@ -13,12 +15,7 @@ const Counter: FC = () => {
     <View style={styles.container}>
       <View style={styles.countContainer}>
         <Text style={styles.text}>🚀</Text>
-        <Animated.Text
-          key={count}
-          entering={SlideInDown}
-          exiting={SlideOutUp}
-          style={styles.text}
-        >
+        <Animated.Text key={count} entering={SlideInDown} exiting={SlideOutUp} style={styles.text}>
           {count}
         </Animated.Text>
       </View>
@@ -35,4 +32,4 @@ const Counter: FC = () => {
   );
 };
 
-export default Counter;
+export { Counter };

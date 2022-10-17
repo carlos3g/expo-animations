@@ -1,10 +1,8 @@
 import { FC, useEffect } from 'react';
 import { View } from 'react-native';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
+
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+
 import styles from './styles';
 
 interface ProgressProps {
@@ -22,7 +20,7 @@ const Progress: FC<ProgressProps> = ({ progress }) => {
 
   useEffect(() => {
     animatedProgress.value = withTiming(progress, { duration: 500 });
-  }, [progress]);
+  }, [progress]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <View style={styles.container}>
@@ -31,4 +29,4 @@ const Progress: FC<ProgressProps> = ({ progress }) => {
   );
 };
 
-export default Progress;
+export { Progress };

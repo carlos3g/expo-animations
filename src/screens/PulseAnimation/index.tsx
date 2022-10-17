@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { View } from 'react-native';
-import PulsableCircle from './PulsableCircle';
+
+import { PulsableCircle } from './PulsableCircle';
 import styles from './styles';
 
 const PulseAnimation: FC = () => (
@@ -13,4 +14,4 @@ const PulseAnimation: FC = () => (
   </View>
 );
 
-export default PulseAnimation;
+export { PulseAnimation };

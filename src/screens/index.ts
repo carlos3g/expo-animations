@@ -1,7 +1,7 @@
-export { default as Counter } from './Counter';
-export { default as FadeCarouselTransition } from './FadeCarouselTransition';
-export { default as FloatingHearts } from './FloatingHearts';
-export { default as GesturesWithBall } from './GesturesWithBall';
-export { default as ProgressBar } from './ProgressBar';
-export { default as PulseAnimation } from './PulseAnimation';
-export { default as WaveAnimation } from './WaveAnimation';
+export { Counter } from './Counter';
+export { FadeCarouselTransition } from './FadeCarouselTransition';
+export { FloatingHearts } from './FloatingHearts';
+export { GesturesWithBall } from './GesturesWithBall';
+export { ProgressBar } from './ProgressBar';
+export { PulseAnimation } from './PulseAnimation';
+export { WaveAnimation } from './WaveAnimation';

@@ -1,6 +1,8 @@
-import { colors } from '@styles';
-import { shade, transparentize } from 'polished';
 import { StyleSheet } from 'react-native';
+
+import { transparentize } from 'polished';
+
+import { colors } from '@styles';
 
 const styles = StyleSheet.create({
   container: {

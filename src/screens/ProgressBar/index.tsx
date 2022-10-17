@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import Progress from './Progress';
+
 import styles from './styles';
+import { Progress } from './Progress';
 
 const ProgressBar: FC = () => {
   const [progress, setProgress] = useState(30);
@@ -23,4 +24,4 @@ const ProgressBar: FC = () => {
   );
 };
 
-export default ProgressBar;
+export { ProgressBar };

@@ -1,12 +1,10 @@
+import { FC } from 'react';
+
+import Animated, { SharedValue, useAnimatedProps, useDerivedValue } from 'react-native-reanimated';
+import { Path } from 'react-native-svg';
+
 import { colors } from '@styles';
 import { lerp } from '@utils';
-import { FC } from 'react';
-import Animated, {
-  SharedValue,
-  useAnimatedProps,
-  useDerivedValue,
-} from 'react-native-reanimated';
-import { Path } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
@@ -46,4 +44,4 @@ const Wave: FC<WaveProps> = ({ progress }) => {
   return <AnimatedPath fill={colors.primary} animatedProps={pathProps} />;
 };
 
-export default Wave;
+export { Wave };

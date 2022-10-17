@@ -1,5 +1,6 @@
-import { colors } from '@styles';
 import { StyleSheet } from 'react-native';
+
+import { colors } from '@styles';
 
 interface IStylesProps {
   SIZE: number;

@@ -1,10 +1,9 @@
 import { FC } from 'react';
 import { View } from 'react-native';
+
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-} from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+
 import styles from './styles';
 
 const GesturesWithBall: FC = () => {
@@ -14,11 +13,7 @@ const GesturesWithBall: FC = () => {
   const scaleCtx = useSharedValue(1);
 
   const animatedBallStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: offset.value.x },
-      { translateY: offset.value.y },
-      { scale: scale.value },
-    ],
+    transform: [{ translateX: offset.value.x }, { translateY: offset.value.y }, { scale: scale.value }],
   }));
 
   const pan = Gesture.Pan()
@@ -57,4 +52,4 @@ const GesturesWithBall: FC = () => {
   );
 };
 
-export default GesturesWithBall;
+export { GesturesWithBall };

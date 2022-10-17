@@ -1,11 +1,5 @@
 import { FC, useEffect } from 'react';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withDelay,
-  withRepeat,
-  withTiming
-} from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withDelay, withRepeat, withTiming } from 'react-native-reanimated';
 import styles from './styles';
 
 interface PulseAnimationProps {
@@ -13,10 +7,7 @@ interface PulseAnimationProps {
   duration?: number;
 }
 
-const PulsableCircle: FC<PulseAnimationProps> = ({
-  delay = 0,
-  duration = 2500,
-}) => {
+const PulsableCircle: FC<PulseAnimationProps> = ({ delay = 0, duration = 2500 }) => {
   const opacity = useSharedValue(0.5);
   const scale = useSharedValue(1);
   const circleAnimatedStyle = useAnimatedStyle(() => ({
@@ -26,17 +17,11 @@ const PulsableCircle: FC<PulseAnimationProps> = ({
 
   useEffect(() => {
     const timingConfig = { duration };
-    opacity.value = withDelay(
-      delay,
-      withRepeat(withTiming(0, timingConfig), -1)
-    );
-    scale.value = withDelay(
-      delay,
-      withRepeat(withTiming(2, timingConfig), -1)
-    );
-  }, [opacity, scale]);
+    opacity.value = withDelay(delay, withRepeat(withTiming(0, timingConfig), -1));
+    scale.value = withDelay(delay, withRepeat(withTiming(2, timingConfig), -1));
+  }, [opacity, scale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <Animated.View style={[styles.pulsableCircle, circleAnimatedStyle]} />;
 };
 
-export default PulsableCircle;
+export { PulsableCircle };

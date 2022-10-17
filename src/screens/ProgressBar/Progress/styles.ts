@@ -1,6 +1,8 @@
-import { colors } from '@styles';
-import { tint } from 'polished';
 import { StyleSheet } from 'react-native';
+
+import { tint } from 'polished';
+
+import { colors } from '@styles';
 
 const progressHeight = 18;
 

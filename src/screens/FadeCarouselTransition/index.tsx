@@ -1,12 +1,19 @@
-import { FC, useCallback } from 'react';
-import { Image, NativeScrollEvent, View } from 'react-native';
-import Animated, {
-  useAnimatedScrollHandler,
-  useSharedValue,
-} from 'react-native-reanimated';
-import AnimatedBackgroundImage from './AnimatedBackgroundImage';
+import { FC } from 'react';
+import { Image, ListRenderItem, NativeScrollEvent, View } from 'react-native';
+
+import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated';
+
+import { AnimatedBackgroundImage } from './AnimatedBackgroundImage';
 import { images } from './data';
 import styles from './styles';
+
+const keyExtractor: (item: string) => string = (item) => item;
+
+const renderItem: ListRenderItem<string> = ({ item }) => (
+  <View style={styles.flatListContentWrapper}>
+    <Image style={styles.image} source={{ uri: item }} />
+  </View>
+);
 
 const FadeCarouselTransition: FC = () => {
   const scrollX = useSharedValue(0);
@@ -14,25 +21,10 @@ const FadeCarouselTransition: FC = () => {
     scrollX.value = e.contentOffset.x;
   });
 
-  const keyExtractor = useCallback((_, i) => i.toString(), []);
-  const renderItem = useCallback(
-    ({ item }) => (
-      <View style={styles.flatListContentWrapper}>
-        <Image style={styles.image} source={{ uri: item }} />
-      </View>
-    ),
-    []
-  );
-
   return (
     <View style={styles.container}>
       {images.map((img, i) => (
-        <AnimatedBackgroundImage
-          scrollX={scrollX}
-          index={i}
-          uri={img}
-          key={i}
-        />
+        <AnimatedBackgroundImage scrollX={scrollX} index={i} uri={img} key={img} />
       ))}
 
       <Animated.FlatList
@@ -51,4 +43,4 @@ const FadeCarouselTransition: FC = () => {
   );
 };
 
-export default FadeCarouselTransition;
+export { FadeCarouselTransition };
